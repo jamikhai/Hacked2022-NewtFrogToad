@@ -33,13 +33,13 @@ def upload_file():
             filename_base = "base.json"
             with open(filename_base,'r') as f:
                 data=json.load(f)
-                data["properties"]["files"][0]["uri"] = "http://192.46.223.128:5000"+url_for('download_file', name=filename_image)
-                data["image"] = "http://192.46.223.128:5000"+url_for('download_file', name=filename_image)
+                data["properties"]["files"][0]["uri"] = "http://newtfrogtoad.tech:5000"+url_for('download_file', name=filename_image)
+                data["image"] = "http://newtfrogtoad.tech:5000"+url_for('download_file', name=filename_image)
             basedir = os.path.abspath(os.path.dirname(__file__))
             with open(os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename_json),'w') as f:
                 json.dump(data,f,indent=4)
             file.save(os.path.join(basedir, app.config['UPLOAD_FOLDER'], filename_image))
-            os.system(f"python3.9 metaplex/python-api/test_api.py --url_json 'http://192.46.223.128:5000/uploads/{filename_json}'")
+            os.system(f"python3.9 metaplex/python-api/test_api.py --url_json 'http://newtfrogtoad.tech:5000/uploads/{filename_json}'")
             return redirect(url_for('download_file', name=filename_json))
     return '''
     <!doctype html>
