@@ -3,7 +3,7 @@ import json
 from flask import Flask, flash, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 from os.path import join, dirname, realpath
-UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'static/uploads/..')
+UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'static/uploads/')
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
